@@ -1,8 +1,8 @@
 <?php 
     session_start();
-    require('actions/questions/showArticleContentAction.php'); 
-    require('actions/questions/postAnswerAction.php');
-    require('actions/questions/showAllAnswersOfQuestionAction.php');
+    require('actions/oeuvre/showArticleContentAction.php'); 
+    require('actions/oeuvre/postAnswerAction.php');
+    require('actions/oeuvre/showAllAnswersOfQuestionAction.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +57,7 @@
                                 <?php 
                                  if(isset($_SESSION['auth'] ) && $_SESSION['role'] == 'admin'){
                                          ?>
-                                    <p><a href="actions/questions/deleteAnswerAction.php?id=<?= $answer['id']; ?>" style="color:brown; text-decoration:none ; "> Supprimer la réponse </a> </p>
+                                    <p><a href="actions/oeuvre/ddeleteOeuvreAction.php?id=<?= $answer['id']; ?>" style="color:brown; text-decoration:none ; "> Supprimer la réponse </a> </p>
                                       <?php
                                          }
                                     ?>
