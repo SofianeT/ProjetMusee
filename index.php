@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require('actions/questions/showAllOeuvreAction.php');
+    require('actions/oeuvre/showAllOeuvreAction.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,16 +29,16 @@
         <br>
 
         <?php 
-            while($question = $getAllQuestions->fetch()){
+            while($oeuvre= $getAllOeuvre->fetch()){
                 ?>
                 <div class="card">
                     <div class="card-header">
-                        <a href="article.php?id=<?= $question['id']; ?>">
-                            <?= $question['titre']; ?>
+                        <a href="article.php?id=<?= $oeuvre['id']; ?>">
+                            <?= $oeuvre['titre']; ?>
                         </a>
                     </div>
                     <div class="card-body">
-                        <?= $question['description']; ?>
+                        <?= $oeuvre['description']; ?>
                     </div>
                     <div class="card-footer">
                         Publié par <a href="profile.php?id=<?= $question['id_auteur']; ?>"><?= $question['pseudo_auteur']; ?></a> le <?= $question['date_publication']; ?>
