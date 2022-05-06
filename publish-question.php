@@ -1,6 +1,6 @@
 <?php 
     require('actions/users/securityAction.php'); 
-    require('actions/oeuvre/publishQuestionAction.php');
+    require('actions/oeuvre/publishOeuvreAction.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
