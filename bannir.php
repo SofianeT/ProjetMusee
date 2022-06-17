@@ -5,10 +5,10 @@
   
     if(isset($_GET['id']) AND !empty($_GET['id'])){
         $id = $_GET['id'];
-        $recupererUser = $bdd->prepare('SELECT * FROM users WHERE id = ?');
+        $recupererUser = $bdd->prepare('SELECT * FROM User WHERE id = ?');
         $recupererUser->execute(array($id));
          if($recupererUser->rowCount() == 1){
-             $bannirUser = $bdd->prepare('DELETE FROM users WHERE id = ?');
+             $bannirUser = $bdd->prepare('DELETE FROM User WHERE id = ?');
              $bannirUser->execute(array($id));
              header('Location: backoffice.php');
          }else{

@@ -21,9 +21,9 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
         $user_lastname = $usersInfos['nom'];
         $user_firstname = $usersInfos['prenom'];
 
-        //Récupérer toutes les questions publiées par l'utilisateur
-        $getHisQuestions = $bdd->prepare('SELECT * FROM questions WHERE id_auteur = ? ORDER BY id DESC');
-        $getHisQuestions->execute(array($idOfUser));
+        //Récupérer toutes les Oeuvres publiées par l'utilisateur
+        $getHisOeuvres = $bdd->prepare('SELECT * FROM Oeuvres WHERE id_auteur = ? ORDER BY id DESC');
+        $getHisOeuvres->execute(array($idOfUser));
 
     }else{
         $errorMsg = "Aucun utilisateur trouvé";

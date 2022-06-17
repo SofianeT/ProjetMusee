@@ -21,7 +21,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
     //Si le commentaire existe
     if($checkIfAnswerExists->rowCount() > 0){
 
-        //Récupérer les infos de la question
+        //Récupérer les infos de la Oeuvre
         $answersInfos = $checkIfAnswerExists->fetch();
         if(isset($_SESSION['auth']) AND $_SESSION['role'] == 'admin'){
 

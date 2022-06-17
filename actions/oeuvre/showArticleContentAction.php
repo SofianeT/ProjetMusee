@@ -2,32 +2,33 @@
 
 require('actions/database.php');
 
-//Vérifier si l'id de la question est rentrée dans l'URL 
+//Vérifier si l'id de la Oeuvre est rentrée dans l'URL 
 if(isset($_GET['id']) AND !empty($_GET['id'])){
 
-    //Récupérer l'identifiant de la question
-    $idOfTheQuestion = $_GET['id'];
+    //Récupérer l'identifiant de la Oeuvre
+    $idOfTheOeuvre = $_GET['id'];
 
-    //Vérifier si la question existe
-    $checkIfQuestionExists = $bdd->prepare('SELECT * FROM questions WHERE id = ?');
-    $checkIfQuestionExists->execute(array($idOfTheQuestion));
+    //Vérifier si la Oeuvre existe
+    $checkIfOeuvreExists = $bdd->prepare('SELECT * FROM Oeuvres INNER Join Categorie ON id_categorie = id  WHERE id = ?');
+    $checkIfOeuvreExists->execute(array($idOfTheOeuvre));
 
-    if($checkIfQuestionExists->rowCount() > 0){
+    if($checkIfOeuvreExists->rowCount() > 0){
 
-        //Récupérer toutes les datas de la questions
-        $questionsInfos = $checkIfQuestionExists->fetch();
+        //Récupérer toutes les datas de la Oeuvres
+        $OeuvresInfos = $checkIfOeuvreExists->fetch();
 
-        //Stocker les datas de la question dans des variables propres.
-        $question_title = $questionsInfos['titre'];
-        $question_content = $questionsInfos['contenu'];
-        $question_id_author = $questionsInfos['id_auteur'];
-        $question_pseudo_author = $questionsInfos['pseudo_auteur'];
-        $question_publication_date = $questionsInfos['date_publication'];
+        //Stocker les datas de la Oeuvre dans des variables propres.
+        $Oeuvre_title = $OeuvresInfos['titre'];
+        $Oeuvre_description = $OeuvresInfos['description'];
+        $Oeuvre_categorie = $OeuvresInfos['id_caterogie'];
+        $Oeuvre_id_author = $OeuvresInfos['auteur'];
+        $Oeuvre_image = $OeuvresInfos['image'];
+        $Oeuvre_date_acquisition = $OeuvresInfos['dateAcquisition'];
         
     }else{
-        $errorMsg = "Aucune question n'a été trouvée";
+        $errorMsg = "Aucune Oeuvre n'a été trouvée";
     }
 
 }else{
-    $errorMsg = "Aucune question n'a été trouvée";
+    $errorMsg = "Aucune Oeuvre n'a été trouvée";
 }

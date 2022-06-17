@@ -27,10 +27,10 @@ if(isset($_POST['validate'])){
                 //Authentifier l'utilisateur sur le site et récupérer ses données dans des variables globales sessions
                 $_SESSION['auth'] = true;
                 $_SESSION['id'] = $usersInfos['id'];
-                $_SESSION['lastname'] = $usersInfos['Nom'];
-                $_SESSION['firstname'] = $usersInfos['Prenom'];
+                $_SESSION['lastname'] = $usersInfos['nom'];
+                $_SESSION['firstname'] = $usersInfos['prenom'];
                 $_SESSION['mail'] = $usersInfos['mail'];
-                // $_SESSION['role'] = $usersInfos['role'];
+                $_SESSION['role'] = $usersInfos['role'];
 
                 //Rediriger l'utilisateur vers la page d'accueil
                 header('Location: index.php');

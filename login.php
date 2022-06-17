@@ -5,8 +5,8 @@
 <body>
     
     <br><br>
-    <img src="https://www.icone-png.com/png/10/10438.png" class="rounded mx-auto d-block" alt="...">
-    <h1 class="text-center">Le forum de l'automobile</h1>
+    <img src="img/1.png" class="rounded mx-auto d-block " alt="..." style="max-height: 400px">
+    <h1 class="text-center">CosMuseum</h1>
     <form class="container" method="POST">
 
         <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>'; } ?>
@@ -21,7 +21,6 @@
         </div>
         <button type="submit" class="btn btn-primary" name="validate">Se connecter</button>
         <br><br>
-        <a href="signup.php"><p>Je n'ai pas de compte, je m'inscris</p></a>
     </form>
 
 </body>

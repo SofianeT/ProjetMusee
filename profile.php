@@ -13,7 +13,7 @@
         <?php 
             if(isset($errorMsg)){ echo $errorMsg; }
 
-            if(isset($getHisQuestions)){
+            if(isset($getHisOeuvres)){
 
                 ?>
                 <div class="card">
@@ -25,17 +25,17 @@
                 </div>
                 <br>
                 <?php
-                while($question = $getHisQuestions->fetch()){ 
+                while($Oeuvre = $getHisOeuvres->fetch()){ 
                     ?>
                     <div class="card">
                         <div class="card-header">
-                            <?= $question['titre']; ?>
+                            <?= $Oeuvre['titre']; ?>
                         </div>
                         <div class="card-body">
-                            <?= $question['description']; ?>
+                            <?= $Oeuvre['description']; ?>
                         </div>
                         <div class="card-footer">
-                            Par <?= $question['pseudo_auteur']; ?> le <?= $question['date_publication'];  ?>
+                            Par <?= $Oeuvre['pseudo_auteur']; ?> le <?= $Oeuvre['date_publication'];  ?>
                         </div>
                     </div>
                     <br>
